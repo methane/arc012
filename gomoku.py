@@ -4,17 +4,10 @@ def count_clears(board, c):
     cc = c*5
     ret = 0
     for i in range(len(board)):
-        L = board[i:][:5]
-        ret += L == cc
-
-        L = board[i::21][:5]
-        ret += L == cc
-
-        L = board[i::20][:5]
-        ret += L == cc
-
-        L = board[i::19][:5]
-        ret += L == cc
+        ret += cc == board[i:][:5]
+        ret += cc == board[i::21][:5]
+        ret += cc == board[i::20][:5]
+        ret += cc == board[i::19][:5]
     return ret
 
 def check_last(board, c):
